@@ -43,6 +43,7 @@
 								<option id="com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.DIAG_WRAP.395437717" name="Wrap diagnostic messages (--diag_wrap)" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.DIAG_WRAP" value="com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.DIAG_WRAP.off" valueType="enumerated"/>
 								<option id="com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.INCLUDE_PATH.1116187239" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.INCLUDE_PATH" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/dskinit}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\DSK6713\c6000\dsk6713\include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\DSK6713\c6000\bios\include&quot;"/>
 								</option>
@@ -68,6 +69,7 @@
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.LIBRARY.1979441126" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.LIBRARY" valueType="libs">
 									<listOptionValue builtIn="false" value="&quot;libc.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/dskinit/Debug/dskinit.lib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\DSK6713\c6000\dsk6713\lib\dsk6713bsl.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\DSK6713\c6000\bios\lib\csl6713.lib&quot;"/>
 								</option>
@@ -148,6 +150,7 @@
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.LIBRARY.179764015" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.LIBRARY" valueType="libs">
 									<listOptionValue builtIn="false" value="&quot;libc.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/dskinit/Release/dskinit.lib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\DSK6713\c6000\dsk6713\lib\dsk6713bsl.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\DSK6713\c6000\bios\lib\csl6713.lib&quot;"/>
 								</option>

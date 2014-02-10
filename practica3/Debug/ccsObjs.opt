@@ -1,1 +1,0 @@
-"./prac3.obj" "./noise.obj" "./modulate.obj" "./Vectors_intr.obj" "./C6713dskinit.obj" "../C6713.cmd" -l"libc.a" -l"C:\DSK6713\c6000\dsk6713\lib\dsk6713bsl.lib" -l"C:\DSK6713\c6000\bios\lib\csl6713.lib" 

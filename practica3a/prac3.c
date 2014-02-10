@@ -31,7 +31,6 @@ int buffer1[LBUFFER];
 int buffer2[LBUFFER];
 int *iobuffer = buffer1;
 int *oblock   = buffer2; 
-Uint32 fs=DSK6713_AIC23_FREQ_16KHZ; //ajuste de la frecuencia de muestreo
 int sample;
 int conf = 0;   // Esta variable se define unicamente para poder cambiar el esquema
                 // de modulacion desde el emulador EVM30, 
@@ -124,6 +123,7 @@ void read_bits(SEQUENCE *pSeq, int nbits, int *bits) {
 }
 
 void main (void){
+   Uint32 fs=DSK6713_AIC23_FREQ_16KHZ; //ajuste de la frecuencia de muestreo
    SEQUENCE seq = {input_bits, ninput_bits, 0};
    USER_BT usr;
    Modulation Mod = PSK; // Modulacion tipo 
@@ -132,7 +132,7 @@ void main (void){
    init_arrays();                    // Inicio de los arrays         
    usr.bits = NULL;
    init_user(&usr, Mod, Lev, snr);   // Configuracion modulador      
-   comm_intr();                     //inicio del DSK, codec, MCBSP
+   comm_intr(fs);                     //inicio del DSK, codec, MCBSP
    
    while (1) {
       if (conf){

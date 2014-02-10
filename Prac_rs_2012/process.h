@@ -1,0 +1,1 @@
+void process(float *, NRstruct *);

@@ -27,7 +27,7 @@ MEMORY
 SECTIONS
 {
     .EXT_RAM       >  EMIFCE0
-    .vecs          >  IVECS
+    .vectors          >  IVECS
     .text          >  IRAM
     .text          >  IRAM
     .stack         >  IRAM

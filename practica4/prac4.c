@@ -3,8 +3,6 @@
 #include "process.h"
 #include "C6713dskinit.h"
 
-Uint32 fs=DSK6713_AIC23_FREQ_16KHZ; // Ajuste de la frecuencia de muestreo
-
 float io1[N], io2[N];	    	// Reserva espacio para los buffers
 
 float *io_block,*io_buffer;			// Puntero del bloque a procesar
@@ -39,6 +37,7 @@ void wait_buffer_block(void)
 
 void main()
 {
+	Uint32 fs=DSK6713_AIC23_FREQ_16KHZ; // Ajuste de la frecuencia de muestreo
 	float hFIR[L_FIR];			// Respuesta impulsional del filtro FIR
 //	filter_iir2 hIIR;			// Coeficientes del filtro IIR
 
@@ -47,7 +46,7 @@ void main()
 //	init_processIIR(&hIIR);		// Filtro generado con MATLAB
 
 	init_buffer_block();
-	comm_intr();                   	// inicio DSK, codec, McBSP usando interrupciones
+	comm_intr(fs);                   	// inicio DSK, codec, McBSP usando interrupciones
 
 	while(1)               	  	 	// bucle infinito
 	{

@@ -1,12 +1,8 @@
-#include "dsk6713_aic23.h"		   // Soporte codec-DSK
+#include "C6713dskinit.h"
 #include "block.h"
 #include "process.h"
-#include "C6713dskinit.h"
-
-Uint32 fs=DSK6713_AIC23_FREQ_16KHZ; // Ajuste de la frecuencia de muestreo
 
 float io1[M], io2[M];	    		// Reserva espacio para los buffers
-
 float *io_block,*io_buffer;			// Puntero del bloque a procesar
 int index=0;
 
@@ -39,11 +35,11 @@ void wait_buffer_block(void)
 
 void main()
 {
+	Uint32 fs=DSK6713_AIC23_FREQ_16KHZ; // Ajuste de la frecuencia de muestreo
+	comm_intr(fs);                // inicio DSK, codec, McBSP usando interrupciones
+
 	init_process();				// Filtro paso alto
-
 	init_buffer_block();
-	comm_intr();                // inicio DSK, codec, McBSP usando interrupciones
-
 	while(1)               	  	// bucle infinito
 	{
 		wait_buffer_block();	// Espera a que se llene el buffer

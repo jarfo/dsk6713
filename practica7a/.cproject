@@ -151,7 +151,7 @@
 									<listOptionValue builtIn="false" value="&quot;C:\DSK6713\c6000\dsk6713\lib\dsk6713bsl.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\DSK6713\c6000\bios\lib\csl6713.lib&quot;"/>
 								</option>
-								<option id="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.DIAG_SUPPRESS.724376305" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.DIAG_SUPPRESS" valueType="stringList">
+								<option id="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.DIAG_SUPPRESS.724376305" name="Suppress diagnostic &lt;id&gt; (--diag_suppress)" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.DIAG_SUPPRESS" valueType="stringList">
 									<listOptionValue builtIn="false" value="16002"/>
 								</option>
 								<inputType id="com.ti.ccstudio.buildDefinitions.C6000_7.4.exeLinker.inputType__CMD_SRCS.417981384" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.4.exeLinker.inputType__CMD_SRCS"/>

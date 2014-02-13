@@ -6,7 +6,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
-#include "dsk6713_aic23.h"   //Ficheros de soporte del DSK6713
 #include "C6713dskinit.h"
 #include "codec.h"
 

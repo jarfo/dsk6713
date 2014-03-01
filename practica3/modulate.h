@@ -19,8 +19,6 @@ typedef struct {
 } USER_BT;
 
 void mpy_cos(int nSamples, double *phase, double *quad, int *out);
-int  modulator_init   (USER_BT *);
+int  modulator_init(USER_BT *);
 void modulator_ask_psk(USER_BT *);
 void modulator_fsk(USER_BT *pUsr, int *out);
-
-extern int conf;

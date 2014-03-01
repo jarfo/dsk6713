@@ -7,7 +7,6 @@
 #include <math.h>
 #include "modulate.h"
 #include "noise.h"
-#include "dsk6713_aic23.h"   //Ficheros de soporte del DSK6713
 #include "C6713dskinit.h"
 
 #define SIMB_BUFF       100    // simbolos a generar por bloque 
@@ -32,11 +31,6 @@ int buffer2[LBUFFER];
 int *iobuffer = buffer1;
 int *oblock   = buffer2; 
 int sample;
-int conf = 0;   // Esta variable se define unicamente para poder cambiar el esquema
-                // de modulacion desde el emulador EVM30, 
-                // sin necesidad de recompilar el programa 
-                //   * Poner un break en la llamada a init_user, en funcion main()
-                //   * Detener la ejecucion y modificar el valor de la variable en Watch Window
 
 interrupt void c_int11()
 {
@@ -126,21 +120,17 @@ void main (void){
    Uint32 fs=DSK6713_AIC23_FREQ_16KHZ; //ajuste de la frecuencia de muestreo
    SEQUENCE seq = {input_bits, ninput_bits, 0};
    USER_BT usr;
-   Modulation Mod = PSK; // Modulacion tipo 
-   int Lev = 2;          // Numero de simbolos 
-   double snr = 100.0;
-   init_arrays();                    // Inicio de los arrays         
    usr.bits = NULL;
-   init_user(&usr, Mod, Lev, snr);   // Configuracion modulador      
-   comm_intr(fs);                     //inicio del DSK, codec, MCBSP
+   Modulation Mod = PSK; // Modulacion tipo
+   int Lev = 2;          // Numero de simbolos
+   double snr = 100.0;
+   init_arrays();                    // Inicio de los arrays
+   init_user(&usr, Mod, Lev, snr);   // Configuracion modulador
+   comm_intr(fs);                    //inicio del DSK, codec, MCBSP
    
    while (1) {
-      if (conf){
-         init_user (&usr, Mod, Lev, snr); // Para poder reconfigurar en ejecucion
-         conf=0;                          // sin recompilar, desde el debugger
-      }
       wait_buffer();
-      read_bits(&seq, usr.nbits, usr.bits);       
+      read_bits(&seq, usr.nbits, usr.bits);
       if (usr.modulation != FSK) {
          modulator_ask_psk(&usr);
          if (usr.snr < 90.0) 

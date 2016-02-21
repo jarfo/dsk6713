@@ -59,7 +59,8 @@ void wait_buffer (void)
 }
 
 void read_bits(SEQUENCE *pSeq, int nbits, int *bits) {
-	for (int i=0; i<nbits; i++) {
+	int i;
+	for (i=0; i<nbits; i++) {
 		bits[i] = pSeq->bits[pSeq->index++];
 		if (pSeq->index == pSeq->nbits)
 			pSeq->index = 0;

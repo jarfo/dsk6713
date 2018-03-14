@@ -90,12 +90,12 @@ PARAMETERS
 	f:		 At the input, the array contains N real samples
 			 At the output, it contains the samples of the DFT, ordered as follows:
 				f[0]	DFT(0)
-				f[1]	DFT(N/2-1)
+				f[1]	DFT(N/2)
 				f[2]	Real(DFT(1))
 				f[3]	Imag(DFT(1))
 				...
-				f[N-2]	Real(DFT(N/2-2))
-				f[N-1]	Imag(DFT(N/2-2))
+				f[N-2]	Real(DFT(N/2-1))
+				f[N-1]	Imag(DFT(N/2-1))
 	N:		 Number of real samples. Must be a power of 2
 	forward: Determines whether to do a forward transform (1) or an inverse one(-1)
 */
